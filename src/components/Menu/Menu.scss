@@ -1,0 +1,140 @@
+* {
+  font-family: "Roboto Condenced", sans-serif;
+}
+body {
+ margin: auto;
+ padding: 0 1rem;
+}
+nav {
+  flex-direction: row;
+}
+.menu {
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  border: 1px double coral;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  list-style: none;
+  flex-wrap: wrap;
+  li {
+    display: flex;
+    align-items: center;
+    padding: 0 0;
+    margin: 0 0;
+  }
+  li a {
+    color: black;
+    margin: 0 0;
+    padding: 1vh;
+    display: flex;
+    align-self: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.2s linear;
+  }
+  li a:hover {
+    background-color: #ffcc01;
+    border-radius: 3px;
+  }
+  li a.logo {
+    font-weight: 700;
+    font-size: 24px;
+    margin-right: 24vw;
+  }
+  li a.contacts {
+    margin-left: 15vw;
+  }
+}
+#checkbox-menu,
+.toggle {
+  display: none;
+}
+@media screen and (max-width: 765px) {
+  .menu {
+    flex-direction: column;
+    padding: 0 0;
+    height: 0;
+    transition: all .4s ease;
+    flex-wrap: nowrap;
+    align-items: stretch;;
+    li {
+      padding: 0 0;
+      margin: 0 auto;
+      justify-content: center;
+      visibility: hidden;
+      opacity: 0;
+      height: 0;
+      transition:all 0.4s linear;
+      
+    }
+    li a {
+      width: 90vw;
+      opacity: 0;
+      margin: 0 .3rem;
+      justify-content: center;
+      text-align: center;
+      border: 1px solid red;
+      transition: height .4s linear;
+    }
+    li a.contacts{
+      width: 90vw;
+      margin: 0 .3rem;
+    }
+    li a.logo{
+      font-weight: 700;
+      margin:  0 .3rem;
+    }
+  }
+  .toggle {
+    display: block;
+    border: 1px solid green;
+    padding: 14px 4px;
+    background-color: #ffcc01;
+    &:hover {
+      background-color: #e2ff29;
+    }
+    & span,
+    & span::before,
+    & span::after {
+      margin: auto;
+      display: block;
+      width: 30px;
+      height: 3px;
+      background-color: black;
+    }
+    span::before {
+      display: block;
+      position: relative;
+      content: "";
+      top: 5px;
+      left: 0;
+    }
+    span::after {
+      display: block;
+      position: relative;
+      content: "";
+      top: -8px;
+      left: 0;
+    }
+  }
+
+
+  #checkbox-menu:checked +label{
+    .touch li {
+      opacity: 1;
+      visibility: visible;
+      margin: 0 0;
+    }
+    .touch {
+      transition: all 0.4 ease;
+      height: 340px;
+    }
+    .touch li a {
+      height: 16px;
+      opacity: 1;
+    }
+
+  }
+}
